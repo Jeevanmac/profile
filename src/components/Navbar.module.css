@@ -1,0 +1,121 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.nav {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.logo {
+  font-size: 1.25rem;
+  margin-right: 2rem;
+  padding: 0.5rem;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navButton {
+  position: relative;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+  border-radius: 999px;
+  overflow: hidden;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.navButton:hover {
+  color: var(--text-primary);
+}
+
+.navButton.activeText {
+  color: var(--bg-primary);
+}
+
+[data-theme='dark'] .navButton.activeText {
+  color: var(--bg-primary);
+}
+
+.navText {
+  position: relative;
+  z-index: 2;
+}
+
+.activeIndicator {
+  position: absolute;
+  inset: 0;
+  background-color: var(--text-primary);
+  border-radius: 999px;
+  z-index: 0;
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.themeToggle:hover {
+  color: var(--text-primary);
+  background-color: var(--border-color);
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+  
+  .logo {
+    display: none; /* Hide logo on mobile to give tabs more space */
+  }
+
+  .navLinks {
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    padding-bottom: 2px; /* Prevent scrollbar clipping */
+  }
+  
+  .navLinks::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  .navButton {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}

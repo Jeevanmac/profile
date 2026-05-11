@@ -1,0 +1,183 @@
+.timelineSection {
+  width: 100%;
+}
+
+.timelineContainer {
+  position: relative;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.mainLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 2rem;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--text-secondary), var(--border-color) 80%);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.timelineNode {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  z-index: 1;
+}
+
+.iconWrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+  transform: translateX(-50%);
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.3s ease;
+}
+
+.activeIcon {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.cardWrapper {
+  width: 100%;
+  padding-left: 1rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  border-color: var(--text-secondary);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.role {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.25rem 0;
+  letter-spacing: -0.01em;
+}
+
+.company {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.duration {
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+  background: var(--bg-secondary);
+  padding: 0.375rem 0.75rem;
+  border-radius: 100px;
+  border: 1px solid var(--border-color);
+}
+
+.responsibilities {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.responsibilities li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.responsibilities li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-tertiary);
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+}
+
+.techBadge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.375rem 0.75rem;
+  background: transparent;
+  color: var(--text-primary);
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+  .timelineContainer {
+    padding-left: 1rem;
+    gap: 2rem;
+  }
+  .mainLine {
+    left: 1rem;
+  }
+  .cardWrapper {
+    padding-left: 1.5rem;
+  }
+  .iconWrapper {
+    width: 32px;
+    height: 32px;
+  }
+  .role {
+    font-size: 1.25rem;
+  }
+  .company {
+    font-size: 1rem;
+  }
+  .card {
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
+  .techStack {
+    padding-top: 1rem;
+  }
+}

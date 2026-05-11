@@ -1,0 +1,95 @@
+.dockContainer {
+  position: fixed;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.dock {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 24px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  pointer-events: auto;
+}
+
+.dockItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  will-change: width, height, transform;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: color 0.3s ease;
+}
+
+.dockItem:hover {
+  background-color: var(--bg-primary);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.dockItem:hover .iconContainer {
+  color: var(--hover-color);
+}
+
+.tooltip {
+  position: absolute;
+  top: -40px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateY(10px);
+  white-space: nowrap;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+}
+
+.dockItem:hover .tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .dockContainer {
+    bottom: 1rem;
+  }
+  
+  .dock {
+    gap: 8px;
+    padding: 8px;
+    border-radius: 20px;
+  }
+  
+  .tooltip {
+    display: none; /* Hide tooltips on mobile/touch devices */
+  }
+}
