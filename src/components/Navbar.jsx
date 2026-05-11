@@ -4,6 +4,7 @@ import { useTheme } from '../context/ThemeProvider';
 import { Moon, Sun } from 'lucide-react';
 import styles from './Navbar.module.css';
 import clsx from 'clsx';
+import logo from '../assets/logo.png';
 
 const navItems = ['Home', 'About', 'Projects', 'Experience', 'Contact'];
 
@@ -14,7 +15,7 @@ export const Navbar = ({ activeTab, setActiveTab }) => {
     <header className={styles.header}>
       <nav className={clsx('glass', styles.nav)}>
         <div className={styles.logo}>
-          <img src="/src/assets/logo.png" alt="Logo" style={{ width: '40px', height: '40px', borderRadius: '50%', display: 'block' }} />
+          <img src={logo} alt="Logo" style={{ width: '40px', height: '40px', borderRadius: '50%', display: 'block' }} />
         </div>
         
         <ul className={styles.navLinks}>
