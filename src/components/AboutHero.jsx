@@ -10,7 +10,7 @@ import certificationsImg from '../assets/about/certifications.png';
 const cards = [
   { id: 'education', title: 'Education', subtitle: 'Academic Background', image: educationImg },
   { id: 'experience', title: 'Experience', subtitle: 'Professional Journey', image: experienceImg },
-  { id: 'internships', title: 'Internships', subtitle: 'Hands-on Learning', image: internshipsImg },
+  { id: 'training', title: 'Internships', subtitle: 'Hands-on Learning', image: internshipsImg },
   { id: 'certifications', title: 'Certifications', subtitle: 'Skill Validation', image: certificationsImg }
 ];
 
