@@ -151,4 +151,8 @@
     rotate: 0 !important;
     transform: none !important;
   }
+
+  .aboutHeroContainer {
+    padding-top: calc(var(--section-padding-y) + 3.5rem);
+  }
 }

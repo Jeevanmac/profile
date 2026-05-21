@@ -200,3 +200,9 @@
   background: linear-gradient(to top, var(--bg-primary) 0%, transparent 40%);
   opacity: 0.5;
 }
+
+@media (max-width: 768px) {
+  .heroContainer {
+    padding-top: calc(var(--section-padding-y) + 3.5rem);
+  }
+}
