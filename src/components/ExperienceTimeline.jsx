@@ -21,6 +21,22 @@ const experiences = [
     icon: <Briefcase size={20} />
   },
   {
+    type: 'work',
+    company: 'Freelance Full-Stack Developer',
+    role: 'Full-Stack Developer (Freelancing)',
+    duration: 'Jun 2024 – Aug 2025',
+    responsibilities: [
+      'Designed and engineered a scalable e-commerce & job marketplace SaaS platform (Aroh Software Solutions / CV TECH).',
+      'Integrated AWS S3 buckets for secure, high-speed digital product file transfers and pre-signed media URLs.',
+      'Designed dynamic schema-driven MongoDB structures and JWT-based authentication flow with HTTP-only security layers.',
+      'Built a rich glassmorphic Admin panel with real-time tracking, candidate hiring logs, and full catalog CRUD capabilities.',
+      'Successfully deployed scalable production-ready client portals and API gateways live on Firebase environments.',
+      'Utilized advanced AI development paradigms to accelerate rapid UI prototyping, automated logging, and feature deployments.'
+    ],
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'AWS S3', 'Socket.IO', 'Firebase', 'Zustand'],
+    icon: <Briefcase size={20} />
+  },
+  {
     type: 'internship',
     company: 'AI Variant',
     role: 'Data Science Intern',

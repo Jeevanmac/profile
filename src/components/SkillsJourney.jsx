@@ -6,6 +6,8 @@ const skills = [
   { name: 'Flutter Development', level: 90 },
   { name: 'AI & Machine Learning', level: 75 },
   { name: 'UI/UX Design', level: 85 },
+  { name: 'Web Designing', level: 88 },
+  { name: 'Web Development', level: 72 },
   { name: 'Frontend Development', level: 80 },
   { name: 'REST APIs', level: 85 }
 ];

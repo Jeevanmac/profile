@@ -4,7 +4,7 @@ import { projectsData } from '../data/projectsData';
 import { ProjectModal } from './ProjectModal';
 import styles from './ProjectsPage.module.css';
 
-const filters = ['All', 'UI/UX', 'Frontend', 'Flutter', 'AI/ML'];
+const filters = ['All', 'Full-Stack', 'UI/UX', 'Frontend', 'Flutter', 'AI/ML'];
 
 export const ProjectsPage = () => {
   const [activeFilter, setActiveFilter] = useState('All');

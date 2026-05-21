@@ -7,6 +7,8 @@ const achievements = [
   'Built scalable cross-platform Flutter applications',
   'Developed intelligent ML recommendation systems',
   'Designed comprehensive UI/UX prototypes in Figma',
+  'Crafted modern, visually stunning web designs prioritizing responsive UX/UI layouts',
+  'Developed intermediate-level, high-performance web applications using robust front-end practices',
   'Integrated secure REST APIs in production apps'
 ];
 

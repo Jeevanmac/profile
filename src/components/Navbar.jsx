@@ -6,7 +6,7 @@ import styles from './Navbar.module.css';
 import clsx from 'clsx';
 import logo from '../assets/logo.png';
 
-const navItems = ['Home', 'About', 'Projects', 'Experience', 'Contact'];
+const navItems = ['Home', 'About', 'Projects', 'Experience', 'Certificates', 'Contact'];
 
 export const Navbar = ({ activeTab, setActiveTab }) => {
   const { theme, toggleTheme } = useTheme();

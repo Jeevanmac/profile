@@ -1,5 +1,32 @@
 export const projectsData = [
   {
+    id: 'aroh-solutions',
+    title: 'Aroh Software Solutions Website (CV TECH)',
+    category: 'Full-Stack',
+    shortDescription: 'An enterprise-grade full-stack SaaS platform featuring a digital asset marketplace, secure AWS S3-backed asset vault, real-time communications, and a robust admin recruitment suite.',
+    image: '/project_images/aroh/aroh_first_image.png',
+    tags: ['React 19', 'Node.js', 'MongoDB', 'AWS S3', 'Socket.IO', 'Tailwind CSS v4'],
+    status: 'Live',
+    overview: 'A premium, high-performance SaaS digital product marketplace and project recruitment platform. Built with a robust administrative panel (The Nexus) and a high-security user workspace (The Client Vault), the application handles secure asset deliveries, real-time message rooms, dynamic transactions, and hiring tracking.',
+    problem: 'Modern digital asset marketplaces struggle with secure distribution of valuable files, real-time transaction integrity, and unified management systems for licensing products while tracking candidate recruitment workflows under the same hub.',
+    features: [
+      'Identity Nexus: Multi-tier role authorization (SuperAdmin, Admin, User) using secure JWT & HttpOnly refresh token rotation.',
+      'Admin Project Vault: Full CRUD management for software sales and hiring, with secure zip files, glassmorphic modals, and custom interactive flows.',
+      'Asset Distribution: Secure delivery of high-resolution digital goods utilizing AWS S3 and dynamically generated pre-signed URLs.',
+      'Notification Engine: Role-based real-time notifications and read receipts implemented via Socket.IO room partitioning.',
+      'Marketplace Core: Full shopping cart, wishlist, and secure checkout integration with transaction logging.'
+    ],
+    challenges: 'Solving Type mismatches (Object vs String) during real-time multi-user Socket notifications and resolving Razorpay signature tampering risks by migrating calculation logic exclusively to the backend payment controllers.',
+    learnings: 'Mastered AWS S3 pre-signed URL secure lifecycles, advanced Socket.IO room partitioning schemes for administrative events, and state synchronization between React client-side Zustand store and Express REST/Socket gateways.',
+    process: 'SaaS Market Research -> Monolithic System Architecture -> MongoDB Database Schema Modeling -> Secure API Gateway Development -> Framer Motion Polish -> Firebase Deployment.',
+    uiUXStrategy: 'A stunning premium dark aesthetic incorporating glassmorphic card elements, custom theme tokens for high readability, and hidden-badge reCAPTCHA v3 protection.',
+    links: {
+      live: 'https://chandu-test-web.web.app/',
+      github: null,
+      caseStudy: '#'
+    }
+  },
+  {
     id: 'precision-detail',
     title: 'Precision Detail — Luxury Automotive',
     category: 'Frontend',

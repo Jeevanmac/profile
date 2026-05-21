@@ -14,6 +14,7 @@ import { TechStackSection } from './components/TechStackSection';
 
 import { ProjectsPage } from './components/ProjectsPage';
 import { ExperiencePage } from './components/ExperiencePage';
+import { CertificatesPage } from './components/CertificatesPage';
 import { ContactPage } from './components/ContactPage';
 import { TrainingSection } from './components/TrainingSection';
 
@@ -49,6 +50,10 @@ function App() {
         
         {activeTab === 'Experience' && (
           <ExperiencePage />
+        )}
+
+        {activeTab === 'Certificates' && (
+          <CertificatesPage />
         )}
 
         {activeTab === 'Contact' && (
