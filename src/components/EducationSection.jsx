@@ -7,19 +7,19 @@ const educationData = [
     degree: 'B.Tech – Information Technology',
     institution: 'Sri Venkateswara College of Engineering, Tirupati',
     university: 'JNTUA University',
-    score: 'CGPA: 7.3 / 10'
+    year: '2023'
   },
   {
     degree: 'Intermediate (MPC)',
     institution: 'Narayana Junior College',
     university: '',
-    score: 'CGPA: 9.19 / 10'
+    year: '2019'
   },
   {
     degree: 'Secondary Education',
     institution: 'Sri Chaitanya Techno School',
     university: '',
-    score: 'CGPA: 8.7 / 10'
+    year: '2017'
   }
 ];
 
@@ -48,7 +48,7 @@ export const EducationSection = () => {
               <h3 className={styles.degree}>{item.degree}</h3>
               <p className={styles.institution}>{item.institution}</p>
               {item.university && <p className={styles.university}>{item.university}</p>}
-              <div className={styles.scoreBadge}>{item.score}</div>
+              <div className={styles.scoreBadge}>Passed Out: {item.year}</div>
             </div>
           </motion.div>
         ))}

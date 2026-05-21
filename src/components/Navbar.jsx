@@ -17,7 +17,7 @@ export const Navbar = ({ activeTab, setActiveTab }) => {
     <header className={styles.header}>
       <nav className={clsx('glass', styles.nav)}>
         <div className={styles.logo}>
-          <img src={logoSrc} alt="Logo" style={{ width: '40px', height: '40px', borderRadius: '50%', display: 'block' }} />
+          <img src={logoSrc} alt="Logo" style={{ width: '48px', height: '48px', borderRadius: '50%', display: 'block' }} />
         </div>
         
         <ul className={styles.navLinks}>
