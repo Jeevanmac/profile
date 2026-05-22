@@ -24,7 +24,7 @@ const experiences = [
     type: 'work',
     company: 'Freelance Full-Stack Developer',
     role: 'Full-Stack Developer (Freelancing)',
-    duration: 'Jun 2024 – Aug 2025',
+    duration: 'May 2026 – Present',
     responsibilities: [
       'Designed and engineered a scalable e-commerce & job marketplace SaaS platform (Aroh Software Solutions / CV TECH).',
       'Integrated AWS S3 buckets for secure, high-speed digital product file transfers and pre-signed media URLs.',
@@ -33,7 +33,7 @@ const experiences = [
       'Successfully deployed scalable production-ready client portals and API gateways live on Firebase environments.',
       'Utilized advanced AI development paradigms to accelerate rapid UI prototyping, automated logging, and feature deployments.'
     ],
-    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'AWS S3', 'Socket.IO', 'Firebase', 'Zustand'],
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'AWS S3', 'Socket.IO', 'Firebase', 'Brevo'],
     icon: <Briefcase size={20} />
   },
   {
@@ -58,9 +58,9 @@ export const ExperienceTimeline = () => {
     <section className={styles.timelineSection}>
       <div className={styles.timelineContainer}>
         <div className={styles.mainLine}></div>
-        
+
         {experiences.map((exp, index) => (
-          <motion.div 
+          <motion.div
             key={index}
             className={styles.timelineNode}
             initial={{ opacity: 0, y: 30 }}
@@ -71,7 +71,7 @@ export const ExperienceTimeline = () => {
             <div className={`${styles.iconWrapper} ${index === 0 ? styles.activeIcon : ''}`}>
               {exp.icon}
             </div>
-            
+
             <div className={styles.cardWrapper}>
               <div className={styles.card}>
                 <div className={styles.cardHeader}>
@@ -81,13 +81,13 @@ export const ExperienceTimeline = () => {
                   </div>
                   <span className={styles.duration}>{exp.duration}</span>
                 </div>
-                
+
                 <ul className={styles.responsibilities}>
                   {exp.responsibilities.map((task, i) => (
                     <li key={i}>{task}</li>
                   ))}
                 </ul>
-                
+
                 <div className={styles.techStack}>
                   {exp.technologies.map((tech, i) => (
                     <span key={i} className={styles.techBadge}>{tech}</span>
