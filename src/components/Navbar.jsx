@@ -25,6 +25,24 @@ export const Navbar = ({ activeTab, setActiveTab }) => {
     }
   };
 
+  const scrollLeft = () => {
+    if (navLinksRef.current) {
+      navLinksRef.current.scrollBy({
+        left: -120,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (navLinksRef.current) {
+      navLinksRef.current.scrollBy({
+        left: 120,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   // Handle scroll checks on mount and window resize
   useEffect(() => {
     const timer = setTimeout(handleScroll, 100);
@@ -98,22 +116,18 @@ export const Navbar = ({ activeTab, setActiveTab }) => {
           <img src={logoSrc} alt="Logo" style={{ width: '48px', height: '48px', borderRadius: '50%', display: 'block' }} />
         </div>
         
+        {/* Left Scroll Arrow */}
+        <button 
+          className={clsx(styles.scrollArrow, !showLeftArrow && styles.arrowDisabled)}
+          onClick={scrollLeft}
+          disabled={!showLeftArrow}
+          aria-label="Scroll navigation left"
+        >
+          <ChevronLeft size={16} />
+        </button>
+
+        {/* Center Scrollable Links */}
         <div className={styles.scrollWrapper}>
-          <AnimatePresence>
-            {showLeftArrow && (
-              <motion.div 
-                className={styles.scrollIndicatorLeft}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.2 }}
-                aria-hidden="true"
-              >
-                <ChevronLeft size={14} />
-              </motion.div>
-            )}
-          </AnimatePresence>
-          
           <ul 
             ref={navLinksRef} 
             className={styles.navLinks} 
@@ -137,22 +151,17 @@ export const Navbar = ({ activeTab, setActiveTab }) => {
               </li>
             ))}
           </ul>
-
-          <AnimatePresence>
-            {showRightArrow && (
-              <motion.div 
-                className={styles.scrollIndicatorRight}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.2 }}
-                aria-hidden="true"
-              >
-                <ChevronRight size={14} />
-              </motion.div>
-            )}
-          </AnimatePresence>
         </div>
+
+        {/* Right Scroll Arrow */}
+        <button 
+          className={clsx(styles.scrollArrow, !showRightArrow && styles.arrowDisabled)}
+          onClick={scrollRight}
+          disabled={!showRightArrow}
+          aria-label="Scroll navigation right"
+        >
+          <ChevronRight size={16} />
+        </button>
         
         <button onClick={toggleTheme} className={styles.themeToggle} aria-label="Toggle theme">
           {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}

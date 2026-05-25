@@ -48,40 +48,32 @@
   margin-right: 1.5rem;
 }
 
-.scrollIndicatorLeft,
-.scrollIndicatorRight {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.scrollArrow {
   display: none; /* Hide on desktop as standard layout isn't scrollable */
   align-items: center;
   justify-content: center;
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  background: rgba(20, 20, 20, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+  opacity: 0.8;
+  padding: 0;
+}
+
+.scrollArrow:hover:not(:disabled) {
   color: var(--text-primary);
-  pointer-events: none;
-  z-index: 10;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  opacity: 1;
+  background-color: var(--border-color);
 }
 
-[data-theme='light'] .scrollIndicatorLeft,
-[data-theme='light'] .scrollIndicatorRight {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.scrollIndicatorLeft {
-  left: 4px;
-}
-
-.scrollIndicatorRight {
-  right: 4px;
+.arrowDisabled {
+  opacity: 0.15 !important;
+  cursor: not-allowed;
 }
 
 .navLinks {
@@ -172,8 +164,7 @@
     margin-right: 0.5rem;
   }
 
-  .scrollIndicatorLeft,
-  .scrollIndicatorRight {
+  .scrollArrow {
     display: flex; /* Only show in mobile/tablet viewport */
   }
 
