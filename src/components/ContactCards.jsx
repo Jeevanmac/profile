@@ -33,28 +33,35 @@ export const ContactCards = () => {
       </motion.div>
 
       <div className={styles.infoGrid}>
-        {contactInfo.map((info, index) => (
-          <motion.div 
-            key={index}
-            className={styles.infoCard}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-          >
-            <div className={styles.iconWrapper}>
-              {info.icon}
-            </div>
-            <div className={styles.infoContent}>
-              <h4 className={styles.infoTitle}>{info.title}</h4>
-              {info.link ? (
-                <a href={info.link} className={styles.infoValueLink} target="_blank" rel="noopener noreferrer">{info.value}</a>
-              ) : (
-                <span className={styles.infoValue}>{info.value}</span>
-              )}
-            </div>
-          </motion.div>
-        ))}
+        {contactInfo.map((info, index) => {
+          const isLink = !!info.link;
+          const CardComponent = isLink ? motion.a : motion.div;
+          const extraProps = isLink 
+            ? { href: info.link, target: '_blank', rel: 'noopener noreferrer' } 
+            : {};
+
+          return (
+            <CardComponent 
+              key={index}
+              className={`${styles.infoCard} ${isLink ? styles.clickableCard : ''}`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              {...extraProps}
+            >
+              <div className={styles.iconWrapper}>
+                {info.icon}
+              </div>
+              <div className={styles.infoContent}>
+                <h4 className={styles.infoTitle}>{info.title}</h4>
+                <span className={isLink ? styles.infoValueLink : styles.infoValue}>
+                  {info.value}
+                </span>
+              </div>
+            </CardComponent>
+          );
+        })}
       </div>
     </div>
   );

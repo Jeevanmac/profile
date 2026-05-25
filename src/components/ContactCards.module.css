@@ -55,6 +55,7 @@
   align-items: center;
   gap: 1rem;
   transition: all 0.3s ease;
+  text-decoration: none; /* Reset line for anchor element card */
 }
 
 .infoCard:hover {
@@ -62,6 +63,14 @@
   border-color: var(--text-secondary);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.1);
+}
+
+.clickableCard {
+  cursor: pointer;
+}
+
+.infoCard:hover .infoValueLink {
+  color: var(--accent-color, #0070f3);
 }
 
 .iconWrapper {

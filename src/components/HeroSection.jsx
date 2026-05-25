@@ -12,7 +12,7 @@ const expertiseList = [
   "Data Visualization"
 ];
 
-export const HeroSection = () => {
+export const HeroSection = ({ setActiveTab }) => {
   const [expertiseIndex, setExpertiseIndex] = useState(0);
 
   useEffect(() => {
@@ -59,11 +59,11 @@ export const HeroSection = () => {
           </p>
 
           <div className={styles.ctaGroup}>
-            <button className={styles.primaryBtn}>
+            <button className={styles.primaryBtn} onClick={() => setActiveTab('Projects')}>
               View Projects
               <ArrowRight size={16} className={styles.btnIcon} />
             </button>
-            <button className={styles.secondaryBtn}>
+            <button className={styles.secondaryBtn} onClick={() => setActiveTab('Contact')}>
               Contact Me
             </button>
           </div>

@@ -27,7 +27,7 @@ function App() {
       <main className="container">
         {activeTab === 'Home' && (
           <>
-            <HeroSection />
+            <HeroSection setActiveTab={setActiveTab} />
             <SkillsGrid />
             <ProjectsSection setActiveTab={setActiveTab} />
           </>
